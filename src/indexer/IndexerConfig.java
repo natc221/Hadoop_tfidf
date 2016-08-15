@@ -1,4 +1,4 @@
-package indexer.indexing;
+package indexer;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
@@ -12,7 +12,6 @@ public class IndexerConfig {
 	public static final String SERVICE_ROLE = "EMR_DefaultRole";
 	public static final String JOB_FLOW_ROLE = "EMR_EC2_DefaultRole";
 	
-
 	public static final String BUCKET_NAME = ""; //TODO
 	private static final String BUCKET_URI = "s3://" + BUCKET_NAME + "/";
 

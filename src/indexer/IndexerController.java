@@ -1,4 +1,4 @@
-package indexer.indexing;
+package indexer;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -19,6 +19,4 @@ set hive.merge.mapfiles=false;
 INSERT OVERWRITE TABLE docIndex
 SELECT word_id, doc_id, tfidf, freq
 FROM s3Table
-WHERE word_id != '-'
-AND freq >= 5
 ;

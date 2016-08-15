@@ -1,4 +1,4 @@
-package indexer.indexing.compiler;
+package indexer.compiler;
 
 import java.io.IOException;
 import java.util.HashMap;

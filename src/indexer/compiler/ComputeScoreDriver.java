@@ -1,4 +1,4 @@
-package indexer.indexing.compiler;
+package indexer.compiler;
 
 import java.io.IOException;
 
@@ -9,18 +9,15 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-public class DocCountDriver {
+public class ComputeScoreDriver {
 	
 	public static void main(String[] args) throws IOException, 
 	ClassNotFoundException, InterruptedException {
 		Configuration config = new Configuration();
-		String numDocs = args[2];
-		config.set("numDocs", numDocs);
-		
-		Job job = Job.getInstance(config, "Doc info step");
-		job.setJarByClass(DocCountDriver.class);
-		job.setMapperClass(DocCountMapper.class);
-		job.setReducerClass(DocCountReducer.class);
+		Job job = Job.getInstance(config, "Compute Score");
+		job.setJarByClass(ComputeScoreDriver.class);
+		job.setMapperClass(ComputeScoreMapper.class);
+		job.setReducerClass(ComputeScoreReducer.class);
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(Text.class);
 		
